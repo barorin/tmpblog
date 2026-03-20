@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大洗海風便り | ガルパン視聴記と週末の記録</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
+      body {
+        font-family: "Noto Sans JP", sans-serif;
+        background-color: #f8fafc;
+      }
+      .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .accent-gradient {
+        background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+      }
+      /* 記事本文のスタイル */
+      .article-body h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e2e8f0;
+      }
+      .article-body p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: #334155;
+      }
+      .article-body strong {
+        background: linear-gradient(transparent 60%, #bae6fd 0);
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- ヘッダー -->
+    <header
+      class="bg-white shadow-sm border-b-4 border-sky-500 sticky top-0 z-50"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1
+          class="text-2xl md:text-3xl font-black text-slate-700 tracking-tight cursor-pointer hover:text-sky-600 transition"
+          onclick="renderHome()"
+        >
+          大洗海風便り
+        </h1>
+        <nav class="hidden md:flex space-x-6 text-sm font-bold text-slate-500">
+          <a
+            href="#"
+            onclick="
+              renderHome();
+              return false;
+            "
+            class="hover:text-sky-600 transition"
+            >ホーム</a
+          >
+          <a
+            href="#"
+            onclick="
+              renderPrivacy();
+              return false;
+            "
+            class="hover:text-sky-600 transition"
+            >プライバシーポリシー</a
+          >
+          <a
+            href="#"
+            onclick="
+              renderContact();
+              return false;
+            "
+            class="hover:text-sky-600 transition"
+            >お問い合わせ</a
+          >
+        </nav>
+        <button
+          class="md:hidden text-slate-500 hover:text-sky-600 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <div
+      id="hero-banner"
+      class="accent-gradient text-white py-12 px-4 mb-8 shadow-inner"
+    >
+      <div class="max-w-6xl mx-auto text-center md:text-left">
+        <h2
+          class="text-2xl md:text-4xl font-bold mb-4 drop-shadow-sm text-white"
+        >
+          週末は、大洗の風を感じて。
+        </h2>
+        <p class="text-sky-100 md:text-lg font-medium">
+          アニメの感想、映画のレビュー、そしてたまに行く大洗へのドライブ。自分のペースで綴る個人的な記録帳です。
+        </p>
+      </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main
+      class="max-w-6xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-8"
+    >
+      <!-- 左側：動的コンテンツエリア -->
+      <div id="main-content" class="lg:col-span-2 space-y-8">
+        <!-- ここにJavaScriptでコンテンツが挿入されます -->
+      </div>
+
+      <!-- 右側：サイドバー -->
+      <aside class="space-y-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <h3
+            class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2"
+          >
+            Profile
+          </h3>
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-sky-600 font-bold text-2xl border-2 border-slate-200"
+            >
+              K
+            </div>
+            <div>
+              <p class="font-bold text-slate-800 text-lg">カズキ</p>
+              <p class="text-xs text-slate-500 mt-1">週末ドライブとアニメ</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            元々は車好きの普通の社会人でしたが、配信でたまたま観たガルパンの音響とミリタリー描写のこだわりに惹かれ、すっかり沼に落ちました。今では年に数回、那珂湊の海鮮と大洗の空気を求めて愛車でドライブに出かけています。ここでは日々の視聴記録をのんびりとまとめています。
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+          <div class="flex items-center mb-2">
+            <svg
+              class="w-5 h-5 text-slate-500 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h3 class="text-sm font-bold text-slate-700">サイト運営ポリシー</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            当ブログは、管理人が実際に視聴した作品の感想をまとめた個人的な非公式ブログです。記事内で使用している画像や引用は、著作権法第32条に基づき正当な範囲内で行っています。なお、一部のリンクにはアフィリエイトプログラムを利用しています。
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-800 text-slate-300 py-10">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="mb-6 md:mb-0 text-center md:text-left">
+          <h2 class="text-xl font-black text-slate-200 mb-2">大洗海風便り</h2>
+          <p class="text-xs text-slate-400">
+            &copy; 2026 大洗海風便り All Rights Reserved.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 text-sm font-medium">
+          <a
+            href="#"
+            onclick="
+              renderPrivacy();
+              return false;
+            "
+            class="hover:text-white transition"
+            >プライバシーポリシー</a
+          >
+          <a
+            href="#"
+            onclick="
+              renderPrivacy();
+              return false;
+            "
+            class="hover:text-white transition"
+            >免責事項</a
+          >
+          <a
+            href="#"
+            onclick="
+              renderContact();
+              return false;
+            "
+            class="hover:text-white transition"
+            >お問い合わせ</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- スクリプト：データとSPAルーティング -->
+    <script>
+      // 記事データ（1記事あたり約1500文字の熱量あるレビュー）
+      const articles = [
+        {
+          id: 1,
+          title:
+            "【レビュー】『ガールズ＆パンツァー』TVシリーズ：戦車×女子高生の異色作がミリタリーアニメの金字塔になるまで",
+          date: "2026年3月18日",
+          category: "TVシリーズ",
+          imageUrl:
+            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "「戦車道は乙女の嗜み」という強烈なキャッチコピーと共に2012年に放送開始された本作。ミリタリーと美少女という相反する要素を、完璧なスポ根ドラマとして融合させた奇跡の作品を改めてレビューします。",
+          content: `
+                    <h3>全く新しい「スポ根」アニメの誕生</h3>
+                    <p>「ガールズ＆パンツァー」が放送開始された2012年当時、私は正直「また美少女がキャッキャウフフするだけのアニメかな」と侮っていました。しかし、第1話を見終わった瞬間、その認識は根底から覆されました。本作は単なる美少女アニメではなく、極めて正統派で熱い「スポ根（スポーツ根性）アニメ」だったのです。<br>
+                    茶道や華道と並び、戦車を操る「戦車道」が乙女の嗜みとされている架空の世界。このぶっ飛んだ世界観を、制作陣は異常なほどの熱量とリアリティで描き出しました。履帯（キャタピラ）の軋む音、砲撃の重低音、装甲を弾く金属音。徹底的な考証に基づいたミリタリー描写のガチさと、個性豊かで可愛らしい女子高生たちの日常パートのギャップこそが、本作最大の魅力です。</p>
+
+                    <h3>西住みほの成長と「大洗女子学園」という弱小チーム</h3>
+                    <p>物語の軸となるのは、過去のトラウマから戦車道を避けていた主人公・西住みほの成長です。強豪校「黒森峰女学園」の副隊長だった彼女が、戦車道がないはずの大洗女子学園に転校してきたところから物語は動き出します。<br>
+                    大洗女子学園の戦車道チームは、まさに烏合の衆。素人ばかりのメンバーに加え、戦車も旧式やポンコツばかり。圧倒的な戦力差がある強豪校（聖グロリアーナ、サンダース、プラウダ、そして黒森峰）に対し、みほは「西住流」の型にはまらない、仲間を信じる柔軟な戦術で立ち向かいます。この「弱者が知恵と勇気で強者を打倒する」という王道のジャイアントキリング展開が、視聴者の胸を熱くさせずにはいられません。</p>
+
+                    <h3>仲間との絆、そして「自分の戦車道」を見つける旅</h3>
+                    <p>全12話（＋総集編）という限られた尺の中で、大洗女子学園の多様なチーム（あんこう、カメさん、カバさん、アヒルさん、ウサギさん、カモさん、レオポンさん、アリクイさん）のメンバー全員に見せ場がある構成も見事です。最初は逃げ出していた一年生ウサギさんチームが、終盤で強敵の重戦車に立ち向かう姿には涙を禁じ得ません。<br>
+                    最終決戦での姉・西住まほ率いる黒森峰女学園との死闘は、アニメ史に残る名バトルです。単なる勝敗を超えて、みほが「自分自身の戦車道」を確立するまでの心の旅路を描ききったTVシリーズは、何度見返しても色褪せない、まさにミリタリーアニメの金字塔と呼ぶにふさわしい大傑作です。ミリタリーに興味がない人にこそ、絶対に見てほしい作品です。</p>
+                `,
+        },
+        {
+          id: 2,
+          title:
+            "【映画レビュー】『ガールズ＆パンツァー 劇場版』：極上の音響と圧倒的な戦車戦！何度でも劇場に足を運びたくなる大傑作",
+          date: "2026年3月15日",
+          category: "劇場版",
+          imageUrl:
+            "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "TVシリーズの続編として公開され、深夜アニメの劇場版としては異例の超ロングラン大ヒットを記録した『劇場版』。なぜ本作はこれほどまでに人々を熱狂させ、何度も劇場へ足を運ばせたのか。その理由を紐解きます。",
+          content: `
+                    <h3>理不尽な展開から始まる、最高のカタルシス</h3>
+                    <p>TVシリーズで見事全国大会優勝を果たし、廃校の危機を免れたはずの大洗女子学園。しかし劇場版は、文科省の役人の「口約束だった」という理不尽な掌返しにより、再び学園艦から降ろされ廃校に追い込まれるという衝撃的な展開から幕を開けます。<br>
+                    散り散りになる生徒たち、没収される戦車。あの感動的なTVシリーズの結末を一度壊すという大胆なシナリオ構成には驚かされました。しかし、この「絶対的な絶望」があるからこそ、中盤以降の展開が爆発的なカタルシスを生み出すのです。廃校撤回を賭けた「大学選抜チーム」との殲滅戦。圧倒的な戦力差と、天才・島田愛里寿率いる強力なパーシング部隊、そして反則級の巨大兵器カール自走臼砲を前に、大洗は最大のピンチに陥ります。</p>
+
+                    <h3>昨日の敵は今日の友！熱すぎる胸熱展開</h3>
+                    <p>この絶望的な状況下で駆けつけてくれるのが、TVシリーズで激闘を繰り広げたライバル校の面々です。ダージリン、ケイ、カチューシャ、そして姉のまほ。彼女たちが「短期転校手続き」という力技で大洗女子の制服を着て集結するシーンは、アニメ史屈指の鳥肌モノの展開です。観客が「これが見たかった！」と思うものを、期待以上のクオリティでお出ししてくる水島努監督の手腕には脱帽するしかありません。<br>
+                    各校のドリームチームが織りなす連携プレイ、知波単学園の突撃バカからの成長、継続高校のミカ達によるBT-42の神がかった無双シーンなど、全編が見どころの連続。特に遊園地跡地での終盤のバトルは、戦車の重量感とスピード感が融合した、息を呑むようなアクションの連続です。</p>
+
+                    <h3>「極上爆音上映」が変えた映画体験</h3>
+                    <p>そして本作を語る上で絶対に外せないのが「音響」です。立川シネマシティをはじめとする「極上爆音上映」や「4DX」での鑑賞は、単なる映画鑑賞を超えた「戦場体験」でした。砲弾が空気を裂く音、着弾の衝撃、エンジン音の振動。これらが全身を揺さぶる体験は、自宅のテレビでは決して味わえないものです。<br>
+                    「ガルパンはいいぞ」というシンプルな言葉がネット上で流行しましたが、まさにその言葉通り、小難しい理屈を抜きにして本能で「最高だ」と感じられる作品です。119分間、一瞬たりともダレることなく駆け抜けるエンターテインメントの極致。何度見ても発見があり、何度見ても泣ける。アニメーション映画の歴史に名を残す、完璧な続編と言えるでしょう。</p>
+                `,
+        },
+        {
+          id: 3,
+          title:
+            "【レビュー】『ガールズ＆パンツァー 最終章』第1話〜第3話：知波単学園の進化と、桃ちゃん先輩を救うための新たな戦い",
+          date: "2026年3月10日",
+          category: "最終章",
+          imageUrl:
+            "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "「桃ちゃん先輩が留年する！？」という驚きの理由から始まる『最終章』。現在進行形で展開中の本作の中から、第1話から第3話までの激闘、特にBC自由学園と知波単学園との戦いに焦点を当ててレビューします。",
+          content: `
+                    <h3>新たな動機は「桃ちゃん先輩のAO入試」</h3>
+                    <p>廃校の危機を二度も乗り越えた大洗女子学園。もう戦う理由はないのでは？と思いきや、最終章で提示された新たな目標は「生徒会広報・河嶋桃の留年阻止（AO入試での大学合格）」でした。これまで学園の危機を救ってきた彼女たちの新たな戦いの動機が、一人の先輩の進路のためという「極めて私的で日常的」なものにスケールダウンしたことは、良い意味でガルパンらしいユーモアに溢れています。<br>
+                    しかし、戦いの舞台となる「無限軌道杯」の激しさは、過去の大会を凌駕するものでした。新戦力としてサメさんチーム（Mk.IV戦車）が加わり、大洗の戦術の幅はさらに広がっていきます。</p>
+
+                    <h3>BC自由学園の「欺瞞」と見事な心理戦</h3>
+                    <p>1回戦の相手は、マリー隊長率いるBC自由学園。エスカレーター組と受験組の対立でチームワークがボロボロ…に見せかけた、見事な欺瞞（フェイク）作戦には視聴者も完全に騙されました。橋の上での大洗女子のピンチ、そしてそこから「ボカージュ（生垣）」を利用して反撃に転じるみほの戦術眼は健在です。<br>
+                    フランスのARL44やソミュアS35といった特徴的な戦車が、泥臭くも優雅に戦う姿はミリタリーファン垂涎の的。特筆すべきは、敵味方問わずキャラクターの個性が1話（約47分）という短い尺の中で完璧に描かれている点です。ケーキを食べながら指示を出すマリーの優雅さと底知れなさが印象的でした。</p>
+
+                    <h3>第2回戦：知波単学園の恐るべき進化</h3>
+                    <p>そして第2話後半から第3話にかけて描かれる、知波単学園との夜間ジャングル戦。これこそが最終章前半の最大のハイライトです。劇場版まで「突撃」しか脳がなかった知波単学園が、西絹代隊長のもとで「撤退（転進）」や「待ち伏せ」という戦術を覚え、大洗をかつてないほどに追い詰めます。<br>
+                    水陸両用戦車・特二式内火艇（カミ）を駆使したゲリラ戦術、夜の暗闇とジャングルの地形を活かした恐怖感溢れる演出は、まるでベトナム戦争映画を見ているかのような緊迫感です。「突撃しない知波単」がいかに恐ろしいか。みほの裏をかき続ける西隊長の成長ぶりには、敵ながら拍手を送りたくなりました。そして第3話のラスト、あんこうチームに対する衝撃的な結末…。絶望的なクリフハンガーで終わる構成は、ファンを数年間焦らすに十分な悪魔的な演出でした。最終章は、ガルパンがさらに一回り成長したことを証明する傑作シリーズとなっています。</p>
+                `,
+        },
+        {
+          id: 4,
+          title:
+            "【徹底レビュー】『ガールズ＆パンツァー 最終章』第4話：白い魔女の脅威！あんこうチーム不在の絶望から立ち上がる大洗女子学園",
+          date: "2026年3月5日",
+          category: "最終章",
+          imageUrl:
+            "https://images.unsplash.com/photo-1478265409131-1f65c88f965c?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "第3話の絶望的なラストから続く第4話。大黒柱である「あんこうチーム（西住みほ）」を早々に失った大洗女子学園は、継続高校の白い魔女・ヨウコの脅威にどう立ち向かうのか。息を呑む雪中戦の真髄に迫ります。",
+          content: `
+                    <h3>指揮官喪失のパニックと、ウサギさんチームの覚醒</h3>
+                    <p>第3話のラスト、継続高校の謎の狙撃手・ヨウコの一撃により、西住みほを乗せたIV号戦車（あんこうチーム）が白旗を上げるという、ファンにとってトラウマ級の絶望から第4話はスタートします。絶対的指揮官を失った大洗女子は、当然のことながら大パニックに陥ります。<br>
+                    各車の連携は乱れ、継続高校の巧妙な誘い込みによって次々と撃破されていく仲間たち。この「みほがいなければ何もできない」という大洗の弱点が浮き彫りになる描写は、非常にリアルで残酷でした。<br>
+                    しかし、ここで立ち上がったのが、かつて第1話で敵前逃亡していた「ウサギさんチーム（1年生チーム）」の澤梓です。みほの背中を一番近くで見てきた彼女が、震える声で指揮を引き継ぎ、散り散りになった仲間を立て直していく過程は、涙なしでは見られません。TVシリーズからの積み重ねが見事に結実した瞬間でした。</p>
+
+                    <h3>雪原の白い魔女・ヨウコと継続高校の恐るべき機動力</h3>
+                    <p>対する継続高校の恐ろしさは、単なる狙撃だけではありません。フィンランド軍の戦術をモチーフにした彼らは、雪原という地の利を最大限に活かしてきます。装輪装甲車の圧倒的な機動力、そして急斜面をスキーのように滑降しながら砲撃してくる常軌を逸した戦法。ミカの「風に任せる」という言葉の裏にある、計算し尽くされた猟兵戦術に大洗は翻弄されます。<br>
+                    中でも、ヨウコの操る三突（III号突撃砲）による長距離狙撃のプレッシャーは、画面越しにも伝わってくるほどの緊迫感。いつ、どこから撃たれるか分からない恐怖が、雪山の静寂と共に描かれます。</p>
+
+                    <h3>極限状態での雪中戦と、もう一つの準決勝</h3>
+                    <p>後半の雪山でのダウンヒル・バトルは、ガルパン史上最高のアクションシーンの一つと言っても過言ではありません。雪煙を上げながらのドリフト、雪庇（せっぴ）の崩落を利用した攻防など、アニメーションとしての動きの快感が限界突破しています。大洗の各チームが、みほの指示なしで自ら考え、連携して巨大な敵に立ち向かっていく姿は、「西住流」ではなく「大洗流」の戦車道が完成したことを意味しています。<br>
+                    また、同時進行で描かれるもう一つの準決勝、「黒森峰vs聖グロリアーナ」の熱戦も必見。新隊長となった逸見エリカの苦悩と覚醒、そしてダージリンの底知れぬ実力。第4話は、喪失からの再生、息を呑むアクション、そして他校のドラマまでをも完璧なテンポで詰め込んだ、圧倒的な満足感を与えてくれる傑作エピソードです。</p>
+                `,
+        },
+        {
+          id: 5,
+          title:
+            "【OVAレビュー】『これが本当のアンツィオ戦です！』：ノリと勢いだけじゃない！ドゥーチェの戦術とマカロニ作戦",
+          date: "2026年3月1日",
+          category: "OVA",
+          imageUrl:
+            "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "TVシリーズでは僅か数秒で省略されてしまった幻の「第2回戦・アンツィオ高校戦」。実はこの試合には、アンツィオの熱い魂と緻密な戦術、そしてガルパンに欠かせない「食」の魅力が詰まっていました。",
+          content: `
+                    <h3>なぜアンツィオ戦は飛ばされたのか？からの完璧な補完</h3>
+                    <p>TVシリーズ放送時、第7話で「アンツィオ高校との試合が始まった！」と思ったら、直後に「勝ちました！」と一瞬で終わってしまったあの衝撃を覚えているファンは多いでしょう。尺の都合で全カットという不遇な扱いを受けたアンツィオ高校ですが、OVAとして制作された本作『これが本当のアンツィオ戦です！』は、その不満を120%吹き飛ばす最高のスピンオフとなりました。<br>
+                    アンツィオ高校は、イタリアのノリと陽気さを持つ学校。資金難にあえぎ、戦車は豆戦車（CV33）ばかりという弱小校ですが、隊長のアンチョビ（ドゥーチェ）を筆頭に、カルパッチョ、ペパロニといった魅力的なキャラクターたちが、負けを恐れず全力で戦車道を楽しむ姿が描かれます。</p>
+
+                    <h3>「マカロニ作戦」の面白さと、アンチョビの有能な指揮官ぶり</h3>
+                    <p>このOVAの最大の見どころは、アンチョビの有能さです。TV版のダイジェスト映像だけ見ると「口だけのポンコツキャラ」に見えましたが、本作では限られた戦力（大量のCV33と、なけなしの重戦車P40）を最大限に活かすための頭脳戦を展開します。<br>
+                    木製のハリボテ戦車を配置して大洗を混乱させる「マカロニ作戦」は、滑稽に見えて実は非常に効果的。さらに、機動力に優れるCV33群で大洗を包囲・翻弄し、切り札であるP40で一撃を加えるという戦術は、もし大洗が油断していれば敗北していた可能性すらある見事なものでした。アンチョビの「ノリと勢いだけじゃない」カリスマ性と、部下思いの優しい一面が見られることで、彼女は一躍大人気キャラクターとなりました。</p>
+
+                    <h3>戦いの後はノーサイド！最高の宴会シーン</h3>
+                    <p>そしてアンツィオ戦を語る上で外せないのが「食事」です。試合前の壮行会での大量のパスタ、そして試合終了後、勝敗を超えて大洗とアンツィオの両校が健闘を讃え合いながら開かれる大宴会。アンツィオ名物の鉄板焼きナポリタンなどを美味しそうに食べる少女たちの姿は、ガルパンの根底にある「戦車道はスポーツであり、殺し合いではない」という平和な世界観を象徴しています。<br>
+                    このアンツィオ戦での交流があったからこそ、後の劇場版でのアンチョビたちの駆けつけがより感動的なものになるのです。戦術的な面白さと、キャラクターの愛らしさ、そして見終わった後に無性にイタリアンが食べたくなる飯テロ要素。約40分のOVAの中に、ガルパンの魅力がギュッと凝縮された、絶対に外せない名作エピソードです。</p>
+                `,
+        },
+        {
+          id: 6,
+          title:
+            "【OVAレビュー】『アリス・ウォー！』：島田愛里寿の日常と大洗体験！癒やし度満点の神エピソード",
+          date: "2026年2月20日",
+          category: "OVA",
+          imageUrl:
+            "https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "劇場版の激闘のその後を描いたOVA。大学選抜チームの天才隊長・島田愛里寿が大洗女子学園にやってきて、各チームの個性的な「おもてなし」に翻弄される最高に癒やされるエピソードをレビューします。",
+          content: `
+                    <h3>劇場版の激闘の裏側で描かれる「日常」の尊さ</h3>
+                    <p>劇場版での大洗女子学園と大学選抜チームの壮絶な戦い。その興奮も冷めやらぬ中で制作されたOVA『アリス・ウォー！』は、本編のヒリヒリとした緊張感とは打って変わって、極上の癒やしを提供してくれる素晴らしいスピンオフ作品です。<br>大学選抜チームの隊長であり、天才的な戦車道の腕前を持つ島田愛里寿。劇場版では大洗の前に立ちはだかる最大の壁として描かれましたが、このOVAでは彼女の「普通の女の子」としての等身大の魅力が存分に描かれています。大洗にやってきた彼女が、転校先を探すという名目で大洗女子学園の各チームを巡るというストーリーは、ファンにとって夢のようなシチュエーションと言えるでしょう。</p>
+
+                    <h3>大洗女子学園の個性的なおもてなし</h3>
+                    <p>愛里寿を出迎える大洗女子学園の面々の「おもてなし」は、各チームの個性が爆発していて爆笑必至です。アヒルさんチームのスポ根ノリ、カバさんチームの歴女ノリ、ウサギさんチームやレオポンさんチームなど、それぞれのチームが愛里寿を勧誘しようと奮闘する姿は、TVシリーズ初期のわちゃわちゃ感を思い出させてくれます。<br>天才指揮官として常に気を張っていた愛里寿が、大洗のマイペースな生徒たちに振り回されながらも、どこか楽しそうにしている様子を見るだけで、視聴者としては自然と頬が緩んでしまいます。特に、みほとの再会シーンや、ボコミュージアムでの二人のやり取りは、戦いを通じて芽生えた奇妙な友情と絆を感じさせ、胸が温かくなります。</p>
+
+                    <h3>愛里寿の決断と、これからのガルパン</h3>
+                    <p>大洗女子学園の様々なチームを体験した愛里寿ですが、最終的に彼女はどのような決断を下すのか。それは是非本編を見て確かめていただきたいのですが、彼女の出した答えは、非常に彼女らしく、そしてガルパンという作品のテーマである「自分だけの戦車道」を体現するものでした。<br>強敵であったキャラクターが、戦いを経て良きライバルであり友人となる。これはスポーツマンシップを重んじるガルパンの王道パターンですが、愛里寿の場合は特にその変化が顕著で魅力的です。最終章においても彼女の動向は非常に気になるところであり、このOVAは今後の展開を占う上でも重要なエピソードとなっています。戦闘シーンがなくても、キャラクター同士の掛け合いだけでこれだけ面白いというのは、ガルパンのキャラクター造形がいかに優れているかの証明です。</p>
+                `,
+        },
+        {
+          id: 7,
+          title:
+            "【考察】大洗女子学園・あんこうチームの魅力：奇跡を起こす5人の絶妙なバランスと成長の軌跡",
+          date: "2026年2月15日",
+          category: "考察・コラム",
+          imageUrl:
+            "https://images.unsplash.com/photo-1733592404342-e1ca2110c69c?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "数々の奇跡的な勝利を収めてきた主人公「あんこうチーム」。西住みほをはじめとする5人のメンバーのそれぞれの役割と、初期から現在に至るまでの胸が熱くなる成長の軌跡を徹底考察します。",
+          content: `
+                    <h3>奇跡を起こす5人の絶妙なバランス</h3>
+                    <p>『ガールズ＆パンツァー』の主人公チームであり、数々の奇跡的な勝利を収めてきた「あんこうチーム」。西住みほ（車長）、武部沙織（通信手）、五十鈴華（砲手）、秋山優花里（装填手）、冷泉麻子（操縦手）の5人からなるこのチームは、一見すると寄せ集めのように見えますが、実は奇跡的なバランスで成り立っている最強のチームです。<br>初期の彼女たちは、みほ以外は完全に戦車道の素人でした。しかし、それぞれの得意分野や個性が、戦車という密室の中で完璧に噛み合っていく過程こそが、本作の大きな見どころの一つです。沙織の持ち前のコミュニケーション能力とタイピング速度は正確な情報伝達を生み、華の生け花で培われた集中力は百発百中の砲撃を可能にします。秋山殿の豊富なミリタリー知識と戦車への愛はチームの精神的支柱となり、麻子の天才的な操縦技術はみほの奇抜な戦術を現実のものとします。</p>
+
+                    <h3>西住みほの「仲間を信じる」指揮</h3>
+                    <p>あんこうチームの最大の強みは、車長である西住みほの「仲間を完全に信頼した指揮」にあります。みほは黒森峰女学園時代、「西住流」の型にはまった戦術と、勝利を最優先する冷徹な判断を求められていました。しかし、大洗女子学園で出会った仲間たちは、型にはまらない自由な発想を持っています。<br>みほは彼女たちの個性を否定せず、むしろそれを最大限に活かす戦術を組み立てます。麻子の変態的な機動を信じているからこそ、無茶なドリフトや回避行動を指示できる。華の必中の腕を信じているからこそ、一撃必殺のタイミングを任せられる。この「信頼関係」こそが、カタログスペックでは圧倒的に劣るIV号戦車で、強力な重戦車を次々と撃破できる最大の理由なのです。彼女たちの絆は、試合を重ねるごとに強固なものになっていきます。</p>
+
+                    <h3>素人から歴戦の勇士への成長の軌跡</h3>
+                    <p>TVシリーズ第1話で、初めて戦車に乗ってパニックになっていた彼女たちの姿を覚えているでしょうか。それが劇場版や最終章では、どんな強敵を前にしても決して諦めず、冷静に状況を判断し、みほの指示に完璧に応える「歴戦の勇士」へと成長しています。<br>特に最終章第3話・第4話での激闘や、みほ不在という絶望的な状況下での彼女たちの振る舞いを見ると、初期からの成長ぶりに胸が熱くなります。あんこうチームの5人は、単なるチームメイトを超えた、かけがえのない親友同士。戦車の外での日常パートの可愛らしさと、戦闘中の頼もしさのギャップ。この5人だからこそ、私たちは『ガールズ＆パンツァー』という物語にこれほどまでに夢中になれるのです。</p>
+                `,
+        },
+        {
+          id: 8,
+          title:
+            "【ライバル校解説】聖グロリアーナ女学院：決してティーカップをこぼさない！気高き乙女たちの戦車道",
+          date: "2026年2月10日",
+          category: "ライバル校",
+          imageUrl:
+            "https://images.unsplash.com/photo-1532509334149-d2130d74253c?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "大洗女子学園が未だに公式戦・練習試合で一度も勝利できていない最強のライバル校、聖グロリアーナ女学院。隊長ダージリンの底知れぬ魅力と、重厚かつ優雅なイギリス流戦車道について解説します。",
+          content: `
+                    <h3>大洗女子学園の前に立ち塞がる「気高き壁」</h3>
+                    <p>『ガールズ＆パンツァー』に登場する数多くのライバル校の中で、大洗女子学園にとって最も特別で、そして最も越えがたい壁として存在し続けているのが「聖グロリアーナ女学院」です。TVシリーズの練習試合、そして劇場版のエキシビションマッチと、大洗は二度にわたって彼女たちと対戦していますが、未だに一度も勝利を収めることができていません。<br>イギリス戦車を主体とする彼女たちの戦車道は、まさに「気高く、優雅」。どんなに激しい砲火を浴びようとも、決して紅茶をこぼさないという彼女たちのプレイスタイルは、圧倒的な余裕と自信の表れです。重装甲のチャーチル歩兵戦車とマチルダII歩兵戦車による、遅くとも確実に敵を追い詰める重厚な進軍は、見る者に底知れぬプレッシャーを与えます。</p>
+
+                    <h3>ダージリンの格言と底知れぬカリスマ性</h3>
+                    <p>聖グロリアーナを率いる隊長・ダージリンは、作中屈指の人気を誇るキャラクターです。常に優雅に紅茶を嗜み、「こんな格言を知ってる？」と名言（迷言？）を引用する彼女の姿は、一度見たら忘れられない強烈なインパクトを持っています。<br>しかし、彼女の魅力は単なる面白キャラクターというだけではありません。大洗女子学園の戦いぶりを誰よりも高く評価し、時には観客席から、時には味方として、みほたちの成長を見守り続ける彼女は、良きライバルであり、導き手のような存在でもあります。劇場版で大洗のピンチに真っ先に駆けつけ、「イギリス人は恋愛と戦争では手段を選ばない」と言い放って参戦するシーンは、彼女の熱いハートと大洗への友情を感じさせる最高の名シーンです。常に冷静沈着に見えて、実は誰よりも熱い闘志を秘めているのがダージリンなのです。</p>
+
+                    <h3>ローズヒップの加入がもたらした新たな戦術</h3>
+                    <p>劇場版から登場した新キャラクター、ローズヒップの存在も聖グロリアーナの魅力をさらに引き立てています。「優雅さ」を重んじる校風の中で、彼女が乗るクルセイダー巡航戦車のリミッターを解除した爆走ぶりは、聖グロリアーナの戦術に「圧倒的なスピード」という新たな武器をもたらしました。<br>「ですわ！」というお嬢様言葉とは裏腹の猪突猛進なプレイスタイルは、ダージリンの緻密な計算と合わさることで、予測不能な脅威へと変貌します。最終章では、この聖グロリアーナといよいよ公式戦で激突することになるのか、ファンの期待は高まるばかりです。最強の壁として君臨し続ける彼女たちを、大洗がいかにして打ち破るのか。その日が来るのが待ち遠しいですね。</p>
+                `,
+        },
+        {
+          id: 9,
+          title:
+            "【ライバル校解説】プラウダ高校：地吹雪のカチューシャとノンナの絆！圧倒的な火力と雪上戦の恐怖",
+          date: "2026年2月5日",
+          category: "ライバル校",
+          imageUrl:
+            "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "前年度優勝校であり、「吹雪のプラウダ」の異名を持つ強豪校。小さな暴君カチューシャと完璧な副官ノンナの絆、そしてIS-2重戦車の圧倒的な破壊力がもたらす絶望感について徹底レビューします。",
+          content: `
+                    <h3>圧倒的な「雪と火力」で迫る恐怖</h3>
+                    <p>TVシリーズの準決勝で大洗女子学園の前に立ちはだかったのが、前年度の優勝校であるプラウダ高校です。ソ連製戦車を主体とし、「吹雪のプラウダ」の異名を持つ彼女たちとの戦いは、寒冷地という過酷な環境と、圧倒的な物量・火力の差が際立つ、絶望感漂うエピソードでした。<br>T-34/76やT-34/85といった優秀な中戦車に加え、IS-2（スターリン）重戦車の破壊力は脅威そのもの。大洗女子は、プラウダの得意とする包囲戦術の罠に嵌まり、廃教会に追い詰められてしまいます。吹雪の中で徐々に包囲の輪を狭めてくるプラウダの戦車部隊の描写は、ミリタリーアニメとしての「恐怖」を見事に表現していました。</p>
+
+                    <h3>小さな暴君・カチューシャと、完璧なる副官・ノンナ</h3>
+                    <p>プラウダ高校を語る上で欠かせないのが、隊長のカチューシャと副隊長のノンナのコンビです。カチューシャは小柄でワガママ、すぐに「シベリア送りよ！」と叫ぶ子供っぽい性格ですが、戦車道の腕と戦術眼は本物です。自分より大きな相手を見下ろすためにノンナに肩車をさせる姿はコミカルですが、そのカリスマ性でプラウダの巨大な戦力を一つにまとめています。<br>一方のノンナは、常に冷静沈着でカチューシャを完璧にサポートする副官です。彼女の最大の恐ろしさは、IS-2の主砲を百発百中で命中させる驚異的な狙撃技術にあります。移動目標に対しても正確に砲弾を叩き込む彼女の存在は、大洗にとって最大の脅威でした。二人の間に流れる、単なる主従を超えた深い信頼関係と絆（と、ノンナのカチューシャへの異常な愛情）は、プラウダ高校の大きな魅力です。</p>
+
+                    <h3>ロシア語の歌唱とクラーラの加入による進化</h3>
+                    <p>プラウダ高校の象徴的なシーンと言えば、全員でロシア民謡「カチューシャ」を合唱しながら進軍するシーンでしょう。ロシア語の美しい響きと、雪原を進む戦車群の迫力が見事に融合したこの場面は、ガルパン屈指の名シーンとして語り継がれています。<br>さらに劇場版からは、流暢なロシア語を操る（というかロシア語しか話さない）転校生・クラーラが加入し、プラウダの個性はさらに強化されました。ノンナとクラーラがロシア語で会話をし、カチューシャが「日本語で話しなさいよ！」と突っ込むお約束のやり取りは、重い戦闘シーンの中の清涼剤となっています。圧倒的な力とコミカルなキャラクター性が同居するプラウダ高校。彼女たちもまた、大洗にとってかけがえのない最高のライバルなのです。</p>
+                `,
+        },
+        {
+          id: 10,
+          title:
+            "【ライバル校解説】サンダース大学付属高校：物量だけじゃない！ケイのポジティブなリーダーシップとフェアプレー精神",
+          date: "2026年1月28日",
+          category: "ライバル校",
+          imageUrl:
+            "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+          excerpt:
+            "TVシリーズ1回戦で激突したサンダース大学付属高校。圧倒的なシャーマン戦車の物量に加え、隊長ケイの底抜けに明るい性格とスポーツマンシップが、大洗女子に大きな影響を与えた名勝負を振り返ります。",
+          content: `
+                    <h3>物量だけではない！サンダースの真の強さ</h3>
+                    <p>TVシリーズの全国大会1回戦。初めての公式戦で大洗女子学園が激突したのが、アメリカ製戦車を多数保有する資金力トップクラスの強豪、サンダース大学付属高校でした。無数のM4シャーマン戦車が地平線を埋め尽くすように進軍してくる光景は、1回戦から大洗が直面した「圧倒的な絶望」を視覚的に叩きつけてきました。<br>しかし、サンダースの強さは単なる物量だけではありません。彼女たちの最大の特徴は、大洗の通信を傍受するという、ルール違反スレスレの情報戦（アリサの策）を仕掛けてきたことです。無線通信が命綱である戦車戦において、指示が筒抜けになるという恐怖。大洗女子は序盤から大パニックに陥り、圧倒的な不利な状況での戦いを強いられます。</p>
+
+                    <h3>ケイの底抜けの明るさと「フェアプレー精神」</h3>
+                    <p>この絶体絶命のピンチを救うきっかけとなったのは、他でもないサンダースの隊長・ケイの存在でした。彼女は通信傍受の事実を知ると、「そんなの戦車道じゃない！」と激怒し、自軍の戦力を大洗と同じ数まで減らすという驚きの行動に出ます。<br>「戦車道は戦争じゃない。ルールのあるスポーツだ」というケイの信条は、本作の根底に流れるテーマを見事に体現しています。彼女の底抜けに明るくポジティブな性格、そして勝ち負けよりもフェアプレーと「楽しい試合」を重んじる姿勢は、過去のトラウマに縛られていたみほの心を軽くし、大洗が「自分たちの戦車道」を楽しむための大きな転機となりました。ケイの存在があったからこそ、大洗は強豪校を相手に臆することなく戦えるようになったと言っても過言ではありません。</p>
+
+                    <h3>ナオミの超絶狙撃と、最高に気持ちの良い決着</h3>
+                    <p>試合終盤のフラッグ車同士のチェイスは、手に汗握る展開の連続です。特に、サンダースの副隊長・ナオミが搭乗するシャーマン・ファイアフライの存在感は抜群でした。17ポンド砲の圧倒的な貫通力と、走行中の遠距離狙撃をいとも簡単に成功させるナオミの凄腕は、大洗を最後の最後まで追い詰めます。<br>大洗の奇策と、サンダースの火力。互いの意地がぶつかり合った試合の決着は、紙一重の差でした。しかし、試合終了後に両者が笑顔で健闘を讃え合う姿は、スポーツアニメとしての爽快感に満ち溢れています。ケイがみほにかけた「グッドラック！」の言葉。サンダース戦は、ガルパンが「単なるミリタリーアニメ」の枠を超えた名作であることを証明した、最高に熱く、最高に気持ちの良いエピソードです。</p>
+                `,
+        },
+      ];
+
+      // ページの状態管理
+      let currentPage = "home";
+
+      // 初期化処理
+      document.addEventListener("DOMContentLoaded", () => {
+        renderHome();
+      });
+
+      // ホーム画面（記事一覧）のレンダリング
+      function renderHome() {
+        currentPage = "home";
+        document.getElementById("hero-banner").style.display = "block";
+        window.scrollTo(0, 0);
+
+        let html = `
+                <div class="flex items-center justify-between border-b-2 border-slate-200 pb-2 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-800 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                        最近の投稿
+                    </h2>
+                </div>
+            `;
+
+        articles.forEach((article) => {
+          html += `
+                <article class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col sm:flex-row hover:shadow-md hover:border-sky-300 transition duration-300 group mb-6 cursor-pointer" onclick="renderArticle(${article.id})">
+                    <div class="sm:w-2/5 h-56 sm:h-auto bg-slate-100 relative overflow-hidden flex items-center justify-center border-r border-slate-50">
+                        <img src="${article.imageUrl}" alt="${article.title}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 sm:w-3/5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-3 space-x-2">
+                                <span class="text-xs font-bold py-1 px-3 rounded bg-sky-50 text-sky-600 border border-sky-100">${article.category}</span>
+                                <span class="text-xs text-slate-400">${article.date}</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-sky-600 transition text-slate-700">
+                                ${article.title}
+                            </h3>
+                            <p class="text-slate-500 text-sm line-clamp-3 mb-4 leading-relaxed">
+                                ${article.excerpt}
+                            </p>
+                        </div>
+                        <div class="text-sm font-bold text-sky-500 flex items-center">
+                            記事を読む <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </div>
+                    </div>
+                </article>
+                `;
+        });
+
+        document.getElementById("main-content").innerHTML = html;
+      }
+
+      // 個別記事画面のレンダリング
+      function renderArticle(id) {
+        currentPage = "article";
+        document.getElementById("hero-banner").style.display = "none";
+        window.scrollTo(0, 0);
+
+        const article = articles.find((a) => a.id === id);
+        if (!article) return;
+
+        const html = `
+                <div class="mb-6">
+                    <button onclick="renderHome()" class="text-sky-600 hover:text-sky-800 text-sm font-bold flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        ホームに戻る
+                    </button>
+                </div>
+                <article class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="h-64 md:h-80 bg-slate-100 w-full relative overflow-hidden border-b border-slate-50">
+                        <img src="${article.imageUrl}" alt="${article.title}" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 md:p-10">
+                        <div class="flex items-center mb-4 space-x-3">
+                            <span class="text-sm font-bold py-1 px-3 rounded bg-sky-50 text-sky-600 border border-sky-100">${article.category}</span>
+                            <span class="text-sm text-slate-400">${article.date}</span>
+                        </div>
+                        <h1 class="text-2xl md:text-3xl font-black mb-8 text-slate-800 leading-tight">
+                            ${article.title}
+                        </h1>
+                        <div class="article-body">
+                            <p class="font-bold text-lg text-slate-600 border-l-4 border-sky-400 pl-4 mb-8 bg-slate-50 py-3 pr-3">
+                                ${article.excerpt}
+                            </p>
+                            ${article.content}
+                        </div>
+                    </div>
+                    <!-- アフィリエイトリンク配置想定エリア（審査用） -->
+                    <div class="bg-sky-50 p-6 text-center border-t border-sky-100">
+                        <p class="text-sm text-slate-600 mb-3">この記事で紹介した作品は、動画配信サービスで視聴可能です。</p>
+                        <button class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
+                            公式サイトで作品をチェック（※審査用ダミー）
+                        </button>
+                    </div>
+                </article>
+            `;
+
+        document.getElementById("main-content").innerHTML = html;
+      }
+
+      // プライバシーポリシーのレンダリング（審査に必須）
+      function renderPrivacy() {
+        currentPage = "privacy";
+        document.getElementById("hero-banner").style.display = "none";
+        window.scrollTo(0, 0);
+
+        const html = `
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-8 md:p-12">
+                    <h1 class="text-2xl font-bold mb-8 border-b-2 border-sky-500 pb-3">プライバシーポリシー・免責事項</h1>
+                    <div class="text-slate-700 space-y-6 text-sm leading-relaxed">
+                        <p><strong>個人情報の利用目的</strong><br>
+                        当ブログでは、お問い合わせや記事へのコメントの際、名前やメールアドレス等の個人情報を入力いただく場合がございます。取得した個人情報は、お問い合わせに対する回答や必要な情報を電子メールなどでご連絡する場合に利用させていただくものであり、これらの目的以外では利用いたしません。</p>
+                        
+                        <p><strong>広告について</strong><br>
+                        当ブログでは、第三者配信の広告サービスを利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。クッキーを使用することで当サイトはお客様のコンピュータを識別できるようになりますが、お客様個人を特定できるものではありません。</p>
+                        
+                        <p><strong>アクセス解析ツールについて</strong><br>
+                        当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにクッキー（Cookie）を使用しております。トラフィックデータは匿名で収集されており、個人を特定するものではありません。</p>
+                        
+                        <p><strong>免責事項</strong><br>
+                        当ブログからのリンクやバナーなどで移動したサイトで提供される情報、サービス等について一切の責任を負いません。また当ブログのコンテンツ・情報について、できる限り正確な情報を提供するように努めておりますが、正確性や安全性を保証するものではありません。情報が古くなっていることもございます。</p>
+                    </div>
+                </div>
+            `;
+        document.getElementById("main-content").innerHTML = html;
+      }
+
+      // お問い合わせ（ダミー）のレンダリング
+      function renderContact() {
+        currentPage = "contact";
+        document.getElementById("hero-banner").style.display = "none";
+        window.scrollTo(0, 0);
+
+        const html = `
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-8 md:p-12">
+                    <h1 class="text-2xl font-bold mb-8 border-b-2 border-sky-500 pb-3">お問い合わせ</h1>
+                    <p class="text-slate-600 mb-6 text-sm">当ブログに関するご意見・ご感想などは以下のフォームよりお願いいたします。（※審査用ダミーページです）</p>
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('メッセージを送信しました。');">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">お名前</label>
+                            <input type="text" class="w-full border border-slate-300 rounded-md p-2 focus:ring-sky-500 focus:border-sky-500 bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">メールアドレス</label>
+                            <input type="email" class="w-full border border-slate-300 rounded-md p-2 focus:ring-sky-500 focus:border-sky-500 bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">メッセージ内容</label>
+                            <textarea rows="5" class="w-full border border-slate-300 rounded-md p-2 focus:ring-sky-500 focus:border-sky-500 bg-slate-50"></textarea>
+                        </div>
+                        <button type="submit" class="bg-slate-700 text-white font-bold py-2 px-6 rounded-md hover:bg-slate-800 transition">
+                            送信する
+                        </button>
+                    </form>
+                </div>
+            `;
+        document.getElementById("main-content").innerHTML = html;
+      }
+    </script>
+  </body>
+</html>
