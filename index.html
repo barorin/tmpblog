@@ -547,12 +547,12 @@
                             ${article.content}
                         </div>
                     </div>
-                    <!-- アフィリエイトリンク配置想定エリア（審査用） -->
+                    <!-- アフィリエイトリンク配置エリア -->
                     <div class="bg-sky-50 p-6 text-center border-t border-sky-100">
-                        <p class="text-sm text-slate-600 mb-3">この記事で紹介した作品は、動画配信サービスで視聴可能です。</p>
-                        <button class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
-                            公式サイトで作品をチェック（※審査用ダミー）
-                        </button>
+                        <p class="text-sm text-slate-600 mb-3">この記事で紹介した作品は、DMM TVで視聴可能です。</p>
+                        <a href="https://tv.dmm.com/vod/list/?keyword=%E3%82%AC%E3%83%AB%E3%83%91%E3%83%B3" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
+                            DMM TVで作品をチェックする
+                        </a>
                     </div>
                 </article>
             `;
@@ -560,7 +560,7 @@
         document.getElementById("main-content").innerHTML = html;
       }
 
-      // プライバシーポリシーのレンダリング（審査に必須）
+      // プライバシーポリシーのレンダリング
       function renderPrivacy() {
         currentPage = "privacy";
         document.getElementById("hero-banner").style.display = "none";
@@ -588,7 +588,7 @@
         document.getElementById("main-content").innerHTML = html;
       }
 
-      // お問い合わせ（ダミー）のレンダリング
+      // お問い合わせのレンダリング
       function renderContact() {
         currentPage = "contact";
         document.getElementById("hero-banner").style.display = "none";
